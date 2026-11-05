@@ -36,4 +36,4 @@ If you use RPM to g in your work, please cite it. The citation is in [CITATION.c
 
 Apache License 2.0, see [LICENSE](LICENSE). The bundled fonts (Inter, IBM Plex Mono) are under the SIL Open Font License 1.1.
 
-RPM to g v1.0.0. © Ligant AI Incorporated.
+RPM to g v1.0.1. © Ligant AI Incorporated.

@@ -7,7 +7,7 @@ import { makeExport } from './export.js';
 import { WORKED_EXAMPLE } from './learn.js';
 import { aboutHtml } from './about.js';
 import { injectJsonLd } from './seo.js';
-document.getElementById('site-header').innerHTML = renderHeader({ path: `/${CONFIG.slug}/`, title: CONFIG.toolTitle, description: CONFIG.tagline });
+document.getElementById('site-header').innerHTML = renderHeader({ path: `/${CONFIG.slug}/`, title: CONFIG.toolTitle, description: CONFIG.intro });
 const footer = document.getElementById('site-footer');
 footer.innerHTML = renderFooter({
     repoUrl: CONFIG.repositoryUrl,

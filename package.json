@@ -1,8 +1,8 @@
 {
   "name": "c11-rpm-to-g",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
-  "description": "Relative centrifugal force (g) from rotor radius and speed, and the inverse.",
+  "description": "Turn a rotor speed (rpm) and radius into relative centrifugal force (× g), or a target × g into the rpm that gives it at that radius.",
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "preview": "vite preview --port 5181"
   },
   "dependencies": {
-    "@ligant/bench-chrome": "file:vendor/ligant-bench-chrome-1.8.1.tgz"
+    "@ligant/bench-chrome": "file:vendor/ligant-bench-chrome-1.9.0.tgz"
   },
   "devDependencies": {
     "vite": "^8.3.0"

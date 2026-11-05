@@ -1,6 +1,6 @@
 import { CONFIG } from './config.js';
 export const CANONICAL = `${CONFIG.publicBase}${CONFIG.slug}/`;
-export const SOFTWARE_VERSION = '1.0.0';
+export const SOFTWARE_VERSION = CONFIG.version;
 export const FEATURE_LIST = Object.freeze([
     'Relative centrifugal force (× g) from rotor speed in rpm and radius in cm or mm',
     'The rpm that gives a target × g at a stated radius',

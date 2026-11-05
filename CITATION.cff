@@ -5,12 +5,12 @@ message: If you use this software, please cite it as below.
 type: software
 title: RPM to g
 abstract: >-
-  Relative centrifugal force (g) from rotor radius and speed, and the inverse.
+  Turn a rotor speed (rpm) and radius into relative centrifugal force (× g), or a target × g into the rpm that gives it at that radius.
 authors:
   - family-names: Modi
     given-names: A.B.
     affiliation: Ligant AI Incorporated
-version: v1.0.0
+version: v1.0.1
 license: Apache-2.0
 repository-code: https://github.com/Ligant-AI/C11-RPM-to-g
 url: https://benchtools.ligant.ai/rpm-to-g/

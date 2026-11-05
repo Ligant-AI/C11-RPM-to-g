@@ -9,7 +9,7 @@
   <link rel="icon" id="favicon" href="data:,">
   <meta name="referrer" content="no-referrer">
   <title>Ligant · RPM to g</title>
-  <meta name="description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <meta name="description" content="Turn a rotor speed (rpm) and radius into relative centrifugal force (× g), or a target × g into the rpm that gives it at that radius.">
   <link rel="canonical" href="https://benchtools.ligant.ai/rpm-to-g/">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#FAF7F2">
@@ -18,10 +18,10 @@
   <meta property="og:url" content="https://benchtools.ligant.ai/rpm-to-g/">
   <meta property="og:site_name" content="Ligant Bench Tools">
   <meta property="og:title" content="Ligant · RPM to g">
-  <meta property="og:description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <meta property="og:description" content="Turn a rotor speed (rpm) and radius into relative centrifugal force (× g), or a target × g into the rpm that gives it at that radius.">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ligant · RPM to g">
-  <meta name="twitter:description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <meta name="twitter:description" content="Turn a rotor speed (rpm) and radius into relative centrifugal force (× g), or a target × g into the rpm that gives it at that radius.">
   <link rel="stylesheet" href="./src/tokens.css">
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -70,16 +70,16 @@
           </div>
           <div id="second-radius" class="stack-inner">
             <div class="field">
-              <label for="radius2" id="radius2-label">second radius</label>
+              <label for="radius2" id="radius2-label">second radius (optional)</label>
               <div class="field-row">
                 <input type="text" class="num" id="radius2" inputmode="decimal" aria-describedby="err-radius2">
-                <select id="unit2" aria-label="second radius unit" aria-describedby="err-unit2"><option value="" selected>choose</option><option value="cm">cm</option><option value="mm">mm</option></select>
+                <select id="unit2" aria-label="second radius unit (optional)" aria-describedby="err-unit2"><option value="" selected>choose</option><option value="cm">cm</option><option value="mm">mm</option></select>
               </div>
               <div id="err-radius2"></div>
               <div id="err-unit2"></div>
             </div>
             <div class="field">
-              <label for="basis2" id="basis2-label">second radius basis</label>
+              <label for="basis2" id="basis2-label">second radius basis (optional)</label>
               <select id="basis2" aria-labelledby="basis2-label" aria-describedby="err-basis2"><option value="" selected>choose</option><option value="r_max">r_max</option><option value="r_avg">r_avg</option><option value="r_min">r_min</option></select>
               <div id="err-basis2"></div>
             </div>
