@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com/beacon.min.js https://static.cloudflareinsights.com/beacon.min.js/ https://www.googletagmanager.com; style-src 'self'; font-src 'self'; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; connect-src https://benchtools.ligant.ai/cdn-cgi/rum https://benchtools.ligant.ai/api/subscribe https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://www.google.com https://*.g.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'none'">
+  
+  <link rel="icon" id="favicon" href="data:,">
+  <meta name="referrer" content="no-referrer">
+  <title>Ligant · RPM to g</title>
+  <meta name="description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <link rel="canonical" href="https://benchtools.ligant.ai/rpm-to-g/">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#FAF7F2">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://benchtools.ligant.ai/rpm-to-g/">
+  <meta property="og:site_name" content="Ligant Bench Tools">
+  <meta property="og:title" content="Ligant · RPM to g">
+  <meta property="og:description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ligant · RPM to g">
+  <meta name="twitter:description" content="Relative centrifugal force (g) from rotor radius and speed, and the inverse.">
+  <link rel="stylesheet" href="./src/tokens.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="app">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="masthead" id="site-header"></header>
+  <main id="main">
+    <div class="layout">
+      <form class="panel" id="form" autocomplete="off" onsubmit="return false">
+        <div class="panel-head"><div class="titles"><span class="step">1</span><h2>Your spin</h2></div></div>
+        <div class="panel-body stack">
+          <div class="field">
+            <label for="direction" id="direction-label">direction</label>
+            <select id="direction" aria-labelledby="direction-label"><option value="rpm-to-g" selected>rpm to × g</option><option value="g-to-rpm">× g to rpm</option></select>
+          </div>
+          <div class="field">
+            <label for="speed" id="speed-label">rotor speed</label>
+            <div class="with-unit"><input type="text" class="num" id="speed" inputmode="decimal" aria-describedby="err-speed"><span class="unit" id="speed-unit">rpm</span></div>
+            <div id="err-speed"></div>
+          </div>
+          <div class="field">
+            <label for="rotor">rotor name or model</label>
+            <input type="text" id="rotor" aria-describedby="err-rotor">
+            <div id="err-rotor"></div>
+          </div>
+          <div class="field">
+            <label for="tube">tube type</label>
+            <input type="text" id="tube" aria-describedby="err-tube">
+            <div id="err-tube"></div>
+          </div>
+          <div class="field">
+            <label for="radius" id="radius-label">radius</label>
+            <div class="field-row">
+              <input type="text" class="num" id="radius" inputmode="decimal" aria-describedby="err-radius">
+              <select id="unit" aria-label="radius unit" aria-describedby="err-unit"><option value="" selected>choose</option><option value="cm">cm</option><option value="mm">mm</option></select>
+            </div>
+            <p class="hint" id="diameter-note" hidden></p>
+            <div id="err-radius"></div>
+            <div id="err-unit"></div>
+          </div>
+          <div class="field">
+            <label for="basis" id="basis-label">radius basis</label>
+            <select id="basis" aria-labelledby="basis-label" aria-describedby="err-basis"><option value="" selected>choose</option><option value="r_max">r_max</option><option value="r_avg">r_avg</option><option value="r_min">r_min</option></select>
+            <div id="err-basis"></div>
+          </div>
+          <div id="second-radius" class="stack-inner">
+            <div class="field">
+              <label for="radius2" id="radius2-label">second radius</label>
+              <div class="field-row">
+                <input type="text" class="num" id="radius2" inputmode="decimal" aria-describedby="err-radius2">
+                <select id="unit2" aria-label="second radius unit" aria-describedby="err-unit2"><option value="" selected>choose</option><option value="cm">cm</option><option value="mm">mm</option></select>
+              </div>
+              <div id="err-radius2"></div>
+              <div id="err-unit2"></div>
+            </div>
+            <div class="field">
+              <label for="basis2" id="basis2-label">second radius basis</label>
+              <select id="basis2" aria-labelledby="basis2-label" aria-describedby="err-basis2"><option value="" selected>choose</option><option value="r_max">r_max</option><option value="r_avg">r_avg</option><option value="r_min">r_min</option></select>
+              <div id="err-basis2"></div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="source">source of the radius</label>
+            <input type="text" id="source" aria-describedby="err-source">
+            <div id="err-source"></div>
+          </div>
+        </div>
+      </form>
+      <section class="panel result-sticky" id="result-panel" aria-labelledby="result-title">
+        <div class="panel-head"><div class="titles"><span class="step">2</span><h2 id="result-title">Result</h2></div></div>
+        <div class="panel-body" id="result" aria-live="polite"></div>
+        <div class="panel-body"><button type="button" id="export-json" hidden>Download results (JSON)</button></div>
+      </section>
+      <section class="panel" aria-labelledby="learn-title">
+        <div class="panel-head"><div class="titles"><span class="step">3</span><h2 id="learn-title">Learn</h2></div></div>
+        <div class="panel-body stack">
+          <label class="check"><input type="checkbox" id="learn-toggle" aria-labelledby="learn-toggle-label"> <span id="learn-toggle-label">Learn mode</span></label>
+          <button type="button" id="load-example" hidden>Load worked example</button>
+          <div id="learn" hidden></div>
+        </div>
+      </section>
+    </div>
+    <section class="panel about" id="about" aria-labelledby="about-title">
+      <div class="panel-head"><div class="titles"><h2 id="about-title">About this calculator</h2></div></div>
+      <div class="panel-body about-body" id="about-body"></div>
+    </section>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+</div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

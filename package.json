@@ -1,0 +1,22 @@
+{
+  "name": "c11-rpm-to-g",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Relative centrifugal force (g) from rotor radius and speed, and the inverse.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5181",
+    "build": "vite build",
+    "preview": "vite preview --port 5181"
+  },
+  "dependencies": {
+    "@ligant/bench-chrome": "file:vendor/ligant-bench-chrome-1.8.1.tgz"
+  },
+  "devDependencies": {
+    "vite": "^8.3.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
